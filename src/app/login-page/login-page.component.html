@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-title>Simulador de Evoluções de Casos Clinicos</mat-card-title>
+<mat-card-content>
+<form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm.value)">
+  <p>
+    <mat-form-field>
+      <input name="email" ngModel #email="ngModel" type="email" matInput placeholder="E-mail">
+    </mat-form-field>
+  </p>
+
+  <p>
+    <mat-form-field>
+      <input name="password" ngModel #password="ngModel" required type="password" matInput placeholder="Senha">
+    </mat-form-field>
+  </p>
+
+    <button [disabled]="!loginForm.valid" type="submit" mat-raised-button color="primary">Login</button>
+
+    <p class="forgot-password">
+        <a mat-button href="#" color="primary">Esqueci minha senha</a>
+    </p>
+</form>
+</mat-card-content>
+</mat-card>

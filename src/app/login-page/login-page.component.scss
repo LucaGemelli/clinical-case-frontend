@@ -1,0 +1,36 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100vh;
+
+    mat-card {
+        max-width: 300px;
+        padding-top: 25px;
+
+        mat-card-title {
+            text-align: center;
+        }
+
+        mat-card-title,
+        mat-card-content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .mat-form-field {
+            width: 100%;
+            min-width: 300px;
+        }
+
+        button {
+            width: 100%;
+        }
+
+        .forgot-password {
+            padding-top: 16px;
+            text-align: center;
+        }
+    }
+}
