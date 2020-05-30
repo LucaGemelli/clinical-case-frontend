@@ -11,16 +11,26 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 /* Components */
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomeComponent } from './home/home.component';
+import { SidenavComponent } from './sidenav/sidenav.component';
+import { MyClinicalCasesTableComponent } from './my-clinical-cases-table/my-clinical-cases-table.component';
+import { AllClinicalCasesTableComponent } from './all-clinical-cases-table/all-clinical-cases-table.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    HomeComponent
+    HomeComponent,
+    SidenavComponent,
+    MyClinicalCasesTableComponent,
+    AllClinicalCasesTableComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +41,10 @@ import { HomeComponent } from './home/home.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,1 +1,26 @@
-<p>home works!</p>
+<app-sidenav></app-sidenav>
+<div class="home">
+    <h1 class="header">Home</h1>
+
+    <div class="content">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Meus Casos Clínicos</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <app-my-clinical-cases-table></app-my-clinical-cases-table>
+            </mat-card-content>
+        </mat-card>
+        
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Casos Clínicos</mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+                <app-all-clinical-cases-table></app-all-clinical-cases-table>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

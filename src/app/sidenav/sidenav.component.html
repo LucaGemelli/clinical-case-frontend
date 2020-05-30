@@ -1,0 +1,9 @@
+<nav>
+    <ul>
+        <li *ngFor="let link of navigationLinks">
+            <a mat-button color="primary" [routerLink]="link.page">
+                <i class="material-icons">{{link.icon}}</i> {{link.title}}
+            </a>
+        </li>
+    </ul>
+</nav>
