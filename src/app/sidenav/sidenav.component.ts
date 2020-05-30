@@ -1,15 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface Page {
+    icon: string, 
+    title: string, 
+    href: string, 
+}
+
 @Component({
     selector: 'app-sidenav',
     templateUrl: './sidenav.component.html',
     styleUrls: ['./sidenav.component.scss'],
 })
 export class SidenavComponent implements OnInit {
-    navigationLinks: any[] = [
-        { icon: 'home', title: 'Home', page: '/home' },
-        { icon: 'insert_chart_outlined', title: 'Relatórios', page: '/reports' },
-        { icon: 'check_box', title: 'Checklist', page: '/checklist' }
+    pages: Page[] = [
+        { icon: 'home', title: 'Home', href: '/home' },
+        { icon: 'insert_chart_outlined', title: 'Relatórios', href: '/reports' },
+        { icon: 'check_box', title: 'Checklist', href: '/checklist' }
     ];
     
     constructor() {}
