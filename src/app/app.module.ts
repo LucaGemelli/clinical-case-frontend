@@ -17,11 +17,11 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 
 /* Components */
-import { LoginPageComponent } from './login-page/login-page.component';
-import { HomeComponent } from './home-page/home-page.component';
-import { SidenavComponent } from './sidenav/sidenav.component';
-import { MyClinicalCasesTableComponent } from './my-clinical-cases-table/my-clinical-cases-table.component';
-import { AllClinicalCasesTableComponent } from './all-clinical-cases-table/all-clinical-cases-table.component';
+import { LoginPageComponent } from './pages/login-page/login-page.component';
+import { HomeComponent } from './pages/home-page/home-page.component';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { MyClinicalCasesTableComponent } from './components/my-clinical-cases-table/my-clinical-cases-table.component';
+import { AllClinicalCasesTableComponent } from './components/all-clinical-cases-table/all-clinical-cases-table.component';
 
 @NgModule({
   declarations: [
