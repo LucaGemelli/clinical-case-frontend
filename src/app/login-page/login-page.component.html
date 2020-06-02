@@ -4,7 +4,7 @@
 <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm.value)">
   <p>
     <mat-form-field>
-      <input name="email" ngModel #email="ngModel" type="email" matInput placeholder="E-mail">
+      <input name="email" ngModel #email="ngModel" type="email" matInput required placeholder="E-mail">
     </mat-form-field>
   </p>
 
