@@ -13,9 +13,10 @@ export interface Page {
 })
 export class SidenavComponent implements OnInit {
     pages: Page[] = [
+        { icon: 'notifications', title: 'Notifications', href: '/notifications' },
         { icon: 'home', title: 'Home', href: '/home' },
         { icon: 'insert_chart_outlined', title: 'Relatórios', href: '/reports' },
-        { icon: 'check_box', title: 'Checklist', href: '/checklist' }
+        { icon: 'check_box', title: 'Checklist', href: '/checklist' },
     ];
     
     constructor() {}
