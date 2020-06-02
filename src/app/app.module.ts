@@ -18,7 +18,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 
 /* Components */
 import { LoginPageComponent } from './login-page/login-page.component';
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from './home-page/home-page.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
 import { MyClinicalCasesTableComponent } from './my-clinical-cases-table/my-clinical-cases-table.component';
 import { AllClinicalCasesTableComponent } from './all-clinical-cases-table/all-clinical-cases-table.component';
