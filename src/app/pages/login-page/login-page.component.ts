@@ -16,6 +16,6 @@ export class LoginPageComponent implements OnInit {
         // Check in API if email and password are valid, if valid redirect to home page
         // Cache a cookie with authentication or something like that
 
-        this.router.navigate(['/home']);
+        this.router.navigate(['/casos']);
     }
 }

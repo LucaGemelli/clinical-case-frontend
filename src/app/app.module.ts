@@ -10,27 +10,29 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatInputModule } from '@angular/material/input';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatListModule } from '@angular/material/list';
 
 /* Components */
 import { LoginPageComponent } from './pages/login-page/login-page.component';
-import { HomeComponent } from './pages/home-page/home-page.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MyClinicalCasesTableComponent } from './components/my-clinical-cases-table/my-clinical-cases-table.component';
-import { AllClinicalCasesTableComponent } from './components/all-clinical-cases-table/all-clinical-cases-table.component';
+import { NewCasePageComponent } from './pages/new-case-page/new-case-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    HomeComponent,
+    HomePageComponent,
     SidenavComponent,
     MyClinicalCasesTableComponent,
-    AllClinicalCasesTableComponent
+    NewCasePageComponent,
   ],
   imports: [
     BrowserModule,
@@ -40,11 +42,13 @@ import { AllClinicalCasesTableComponent } from './components/all-clinical-cases-
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
+    MatCheckboxModule,
     MatInputModule,
     MatSidenavModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
+    MatListModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

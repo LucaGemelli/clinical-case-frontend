@@ -10,35 +10,24 @@
         </td>
     </ng-container>
 
+    <ng-container matColumnDef="criador">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Criador</th>
+        <td mat-cell *matCellDef="let element">
+            {{ element.criador }}
+        </td>
+    </ng-container>
+
     <ng-container matColumnDef="code">
         <th mat-header-cell mat-sort-header *matHeaderCellDef>Código</th>
         <td mat-cell *matCellDef="let element">
             {{ element.code }}
         </td>
     </ng-container>
-
-    <ng-container matColumnDef="actions">
-        <th mat-header-cell *matHeaderCellDef>Ações</th>
-        <td mat-cell *matCellDef>
-            <button mat-icon-button color="primary">
-                <i class="material-icons">people</i>
-            </button>
-            
-            <button mat-icon-button color="primary">
-                <i class="material-icons">healing</i>
-            </button>
-            
-            <button mat-icon-button color="primary">
-                <i class="material-icons">library_add_check</i>
-            </button>
-
-            <button mat-icon-button color="primary">
-                <i class="material-icons">file_copy</i>
-            </button>
-            
-            <button mat-icon-button color="primary">
-                <i class="material-icons">restore_from_trash</i>
-            </button>
+    
+    <ng-container matColumnDef="tratando">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Tratando</th>
+        <td mat-cell *matCellDef="let element">
+            {{ element.tratando ? 'SIM' : 'NÃO' }}
         </td>
     </ng-container>
 
