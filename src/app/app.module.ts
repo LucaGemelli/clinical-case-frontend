@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
 
 /* Angular Material Components */
 import { MatButtonModule } from '@angular/material/button';
@@ -39,6 +40,7 @@ import { NewCasePageComponent } from './pages/new-case-page/new-case-page.compon
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     MatButtonModule,
     MatCardModule,
     MatFormFieldModule,
