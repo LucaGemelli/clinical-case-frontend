@@ -9,7 +9,7 @@
             </mat-card-header>
 
             <mat-card-content>
-                <form #newCaseForm="ngForm" (ngSubmit)="handleNewCase(newCaseForm.value)" (keydown.enter)="$event.preventDefault()">
+                <form #newCaseForm="ngForm" (ngSubmit)="handleNewCase(newCaseForm)" (keydown.enter)="$event.preventDefault()">
                     <p>
                         <mat-form-field>
                             <input name="identificacao" ngModel #identificacao="ngModel" type="text" matInput required placeholder="Identificação"/>

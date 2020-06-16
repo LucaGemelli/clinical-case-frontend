@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { NewCasePageService } from './new-case-page.service';
+
 @Component({
     selector: 'app-new-case-page',
     templateUrl: './new-case-page.component.html',
@@ -12,18 +14,21 @@ export class NewCasePageComponent implements OnInit {
 
     newPacientChart: string;
     
-    constructor() {}
+    constructor(private service: NewCasePageService) {}
 
     ngOnInit(): void {}
 
-    handleNewCase(value: any) {
-        let response = {
-            identificacao: value.identificacao,
-            tratar: Boolean(value.tratar),
-            pacientChart: this.pacientChart
-        }
+    handleNewCase(form: any) {
+        // @TODO - When API is updated, send pacient chart
+        let value = form.value,
+            request = {
+                identificacao: value.identificacao,
+                tratar: Boolean(value.tratar),
+                pacientChart: this.pacientChart
+            }
 
-        console.log('FORM:', response);
+        this.service.create(request.identificacao)
+            .subscribe(() => { form.resetForm(); });
     }
 
     showAddPacientChart() {
