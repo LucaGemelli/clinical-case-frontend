@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from "@angular/router"
+import { Router } from "@angular/router";
+import { LoginPageService } from './login-page.service';
 
 @Component({
     selector: 'app-login-page',
@@ -8,14 +9,33 @@ import { Router } from "@angular/router"
 })
 export class LoginPageComponent implements OnInit {
 
-    constructor(private router: Router) { }
+    constructor(private router: Router, private loginPageService : LoginPageService) {}
+
+    login = true;
 
     ngOnInit(): void { }
 
-    handleLogin(value: any) {
-        // Check in API if email and password are valid, if valid redirect to home page
-        // Cache a cookie with authentication or something like that
+    forgotPassword() {
+        this.login = false;
+    }
 
-        this.router.navigate(['/casos']);
+    resetPassword (form: any) {
+        let value = form.value;
+        var email = value.email;
+        this.loginPageService.reset(email);
+    }
+
+    handleLogin(form: any) {
+        let value = form.value;
+        var user = {
+            email: value.email,
+            senha: value.senha
+        }
+
+        this.loginPageService.valid(user).subscribe(users=> {
+            if(users == true) {
+                this.router.navigate(['/anamnese']);      
+            }
+        });
     }
 }

@@ -1,0 +1,32 @@
+<table mat-table matSort [dataSource]="dataSource">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="nome">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element">
+            {{element.nome }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="informante">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Informante</th>
+        <td mat-cell *matCellDef="let element">
+            {{element.informante }}
+        </td>
+    </ng-container>
+
+    <ng-container matColumnDef="acoes">
+        <th mat-header-cell mat-sort-header *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let element">
+            <a mat-button color="primary" [routerLink]="page.href">
+                <i class="material-icons">{{page.icon}}</i>
+            </a>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="myAnamneseColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: myAnamneseColumns"></tr>
+</table>
+<mat-paginator [pageSizeOptions]="[20]" showFirstLastButtons></mat-paginator>

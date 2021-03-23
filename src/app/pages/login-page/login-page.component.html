@@ -1,24 +1,32 @@
 <mat-card>
-    <mat-card-title>Simulador de Evoluções de Casos Clinicos</mat-card-title>
-<mat-card-content>
-<form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm.value)">
-  <p>
-    <mat-form-field>
-      <input name="email" ngModel #email="ngModel" type="email" matInput required placeholder="E-mail">
-    </mat-form-field>
-  </p>
+    <mat-card-title>Prontuário Eletrônico</mat-card-title>
+    <mat-card-subtitle>
+      <img class="pront3" src="../../assets//images/pront3.png" alt="Login picture">
+      <img class="pront2" src="../../assets//images/pront2.png" alt="Login picture">
+      <img class="pront1" src="../../assets//images/pront1.png" alt="Login picture">
+    </mat-card-subtitle>
 
-  <p>
-    <mat-form-field>
-      <input name="password" ngModel #password="ngModel" required type="password" matInput placeholder="Senha">
-    </mat-form-field>
-  </p>
+    <mat-card-content>
+      <form #loginForm="ngForm" (ngSubmit)="handleLogin(loginForm)">
+         <p>
+           <mat-form-field appearance="outline">
+             <mat-label>Email</mat-label>
+             <input name="email" ngModel #email="ngModel" type="email" matInput required>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="outline" *ngIf="login">
+            <mat-label>Senha</mat-label>
+            <input name="senha" ngModel #password="ngModel" required type="password" matInput>
+          </mat-form-field>
+        </p>
 
-    <button [disabled]="!loginForm.valid" type="submit" mat-raised-button color="primary">Login</button>
-
-    <p class="forgot-password">
-        <a mat-button href="#" color="primary">Esqueci minha senha</a>
-    </p>
-</form>
-</mat-card-content>
+        <button [disabled]="!loginForm.valid" type="submit" mat-raised-button color="primary" *ngIf="login">Login</button>
+        <button [disabled]="!loginForm.valid" type="button" mat-raised-button color="primary" *ngIf="!login" (click)="resetPassword(loginForm)">Enviar Email</button>
+        
+        <p class="forgot-password">
+           <a mat-button color="primary" *ngIf="login" (click)="forgotPassword()" >Esqueci minha senha</a>
+       </p>
+     </form>
+   </mat-card-content>
 </mat-card>

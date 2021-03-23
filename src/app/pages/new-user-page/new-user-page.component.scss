@@ -2,7 +2,7 @@
     display: flex;
     min-height: 100vh;
 
-    .home {
+    .new-user {
         width: 100%;
         padding: 32px 16px 16px 32px;
 
@@ -13,9 +13,20 @@
             display: flex;
             justify-content: center;
         }
+        mat-card-header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
         mat-card {
             margin-top: 28px;
         }
+
+        mat-form-field {
+            width: 43%;
+            margin: 10px;
+        }
+
     }
 }

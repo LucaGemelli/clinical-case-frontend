@@ -1,0 +1,166 @@
+<app-sidenav></app-sidenav>
+<div class="new-anamnese">
+    <h1 class="header">Novo Paciente</h1>
+
+    <div class="content">
+        <mat-card>
+            <mat-card-content>
+                <form #newAnamneseForm="ngForm" (ngSubmit)="handleNewHospitalization(newAnamneseForm)" (keydown.enter)="$event.preventDefault()">
+                    <mat-tab-group animationDuration="1000ms">
+                        <mat-tab label="Informações Básicas">              
+                          <p>
+                            <mat-form-field appearance="outline" hintLabel="Max 40 characters">
+                                <mat-label>Nome</mat-label>
+                                <input name="nome" ngModel #nome="ngModel" maxlength="40" type="text" matInput required placeholder="Nome"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 40 characters">
+                                <mat-label>Informante</mat-label>
+                                <input name="informante" ngModel #informante="ngModel" maxlength="40" type="text" matInput required placeholder="Informante"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Sexo</mat-label>
+                                <mat-select name="sexo" ngModel #sexo="ngModel" required matInput>
+                                    <mat-option value="M">Masculino</mat-option>
+                                    <mat-option value="F">Feminino</mat-option>
+                                    <mat-option value="I">Indefinido</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Data Nascimento</mat-label>
+                                <input matInput [matDatepicker]="picker1" name="dataNascimento" ngModel #dataNascimento="ngModel" placeholder="Data Nascimento">
+                                <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+                                <mat-datepicker #picker1></mat-datepicker>
+                              </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 2 characters">
+                                <mat-label>Quantidade Filhos</mat-label>
+                                <input name="quantidadeFilhos" ngModel maxlength="2" #quantidadeFilhos="ngModel" type="number" matInput required placeholder="Quantidade Filhos"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Estado Civil</mat-label>
+                                <mat-select name="estadoCivil" ngModel #estadoCivil="ngModel" required matInput>
+                                    <mat-option value="S">Solteiro</mat-option>
+                                    <mat-option value="C">Casado</mat-option>
+                                    <mat-option value="D">Divorciado</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 20 characters">
+                                <mat-label>Profissão</mat-label>
+                                <input name="profissao" ngModel #profissao="ngModel" maxlength="20" type="text" matInput required placeholder="Profissão"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 20 characters">
+                                <mat-label>Endereço</mat-label>
+                                <input name="endereco" ngModel #endereco="ngModel" maxlength="20" type="text" matInput required placeholder="Endereço"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 20 characters">
+                                <mat-label>Naturalidade</mat-label>
+                                <input name="naturalidade" ngModel #naturalidade="ngModel" maxlength="20" type="text" matInput required placeholder="Naturalidade"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 40 characters">
+                                <mat-label>Motivo Internação</mat-label>
+                                <input name="motivoInternacao" ngModel #motivoInternacao="ngModel" maxlength="40" type="text" matInput required placeholder="Motivo Internação"/>
+                            </mat-form-field>
+                        </p>
+                  </mat-tab>
+                     <mat-tab label="Anamnese">
+                        <p>
+                            <mat-slide-toggle ngModel name="doenca" #doenca="ngModel">Doença</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="fumante" #fumante="ngModel">Fumante</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="alcool" #alcool="ngModel">Álcool</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="drogas" #drogas="ngModel">Drogas</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="condicaoMoradiaSaneamentoBasico" #condicaoMoradiaSaneamentoBasico="ngModel">Condição Moradia Saneamento Básico</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="saneamentoBasico" #saneamentoBasico="ngModel">Saneamento Básico</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="atividadeFisica" #atividadeFisica="ngModel">Atividade Física</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="repouso" #repouso="ngModel">Repouso</mat-slide-toggle>
+                            <mat-slide-toggle ngModel name="cirurgias" #cirurgias="ngModel">Cirurgias</mat-slide-toggle>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Doenças Graves Crônicas</mat-label>
+                                <input name="doencasGraveCronica" ngModel maxlength="10" #doencasGraveCronica="ngModel" type="text" matInput  placeholder="Doenças Graves Crônicas"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Doenças na Infância</mat-label>
+                                <input name="doencaInfancia" ngModel maxlength="10" #doencaInfancia="ngModel" type="text" matInput  placeholder="Doenças na Infância"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Medicamento Uso Domiciliar</mat-label>
+                                <input name="medicamentoUsoDomiciliar" maxlength="10" ngModel #medicamentoUsoDomiciliar="ngModel" type="text" matInput  placeholder="Medicamento Uso Domiciliar"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Alergia Medicamentos</mat-label>
+                                <input name="alergiaMedicamentos" ngModel maxlength="10" #alergiaMedicamentos="ngModel" type="text" matInput  placeholder="Alergia Medicamentos"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Alergia Alimentares</mat-label>
+                                <input name="alergiaAlimentares" ngModel maxlength="10" #alergiaAlimentares="ngModel" type="text" matInput  placeholder="Alergia Alimentares"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Alergia Outras</mat-label>
+                                <input name="alergiaOutras" ngModel maxlength="10" #alergiaOutras="ngModel" type="text" matInput  placeholder="Alergia Outras"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Tratamentos Anteriores</mat-label>
+                                <input name="tratamentosAnteriores" ngModel maxlength="10" #tratamentosAnteriores="ngModel" type="text" matInput  placeholder="Tratamentos Anteriores"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Histórico Obstetríca</mat-label>
+                                <input name="historicoObstetrica" ngModel maxlength="10" #historicoObstetrica="ngModel" type="text" matInput  placeholder="historicoObstetrica"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Histórico Familiar</mat-label>
+                                <input name="historicoFamiliar" ngModel maxlength="10" #historicoFamiliar="ngModel" type="text" matInput  placeholder="historicoFamiliar"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Histórico Câncer</mat-label>
+                                <input name="historicoCancer" ngModel maxlength="10" #historicoCancer="ngModel" type="text" matInput  placeholder="historicoCancer"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Hábitos Higiene Banho</mat-label>
+                                <input name="habitosHigieneBanho" ngModel maxlength="10" #habitosHigieneBanho="ngModel" type="text" matInput  placeholder="habitosHigieneBanho"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Hábitos Higiene Bucal</mat-label>
+                                <input name="habitosHigieneBucal" ngModel maxlength="10" #habitosHigieneBucal="ngModel" type="text" matInput  placeholder="habitosHigieneBucal"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Hábito Alimentares</mat-label>
+                                <input name="habitoAlimentares" ngModel maxlength="10" #habitoAlimentares="ngModel" type="text" matInput  placeholder="Hábito Alimentares"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Equilíbrio Emocional</mat-label>
+                                <input name="equilibrioEmocional" ngModel maxlength="10" #equilibrioEmocional="ngModel" type="text" matInput  placeholder="Equilíbrio Emocional"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Eliminações Urinárias</mat-label >
+                                <input name="eliminacoesUrinarias" ngModel maxlength="10" #eliminacoesUrinarias="ngModel" type="text" matInput  placeholder="Eliminaçôes Urinárias"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Eliminações Intestinais</mat-label>
+                                <input name="eliminacoesIntestinais" ngModel maxlength="10" #eliminacoesIntestinais="ngModel" type="text" matInput  placeholder="Eliminações Intestinais"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Atividade Sexual</mat-label>
+                                <input name="atividadeSexual" ngModel maxlength="10" #atividadeSexual="ngModel" type="text" matInput  placeholder="Atividade Sexual"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Problema Saúde</mat-label>
+                                <input name="problemaSaude" ngModel maxlength="10" #problemaSaude="ngModel" type="text" matInput placeholder="Problema Saúde"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Peso</mat-label>
+                                <input name="peso" ngModel maxlength="10" #peso="ngModel" type="number" matInput placeholder="Peso"/>
+                            </mat-form-field>
+                            <mat-form-field appearance="outline" hintLabel="Max 10 characters">
+                                <mat-label>Altura</mat-label>
+                                <input name="altura" ngModel maxlength="10" #altura="ngModel" type="number" matInput placeholder="Altura"/>
+                            </mat-form-field>
+                        </p>
+                  </mat-tab>
+                </mat-tab-group>
+
+                <div class="button-container">
+                    <button [disabled]="!newAnamneseForm.valid" type="submit" mat-raised-button color="primary">Criar Internação</button>
+                </div>
+                </form>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>

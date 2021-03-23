@@ -1,0 +1,45 @@
+<app-sidenav></app-sidenav>
+<div class="new-user">
+    <h1 class="header">Área Administrativa</h1>
+    <div class="content">
+        <mat-card>
+            <mat-card-header>
+                <mat-card-title>Novo Usuário</mat-card-title>
+            </mat-card-header>
+
+            <mat-divider></mat-divider>
+            
+            <mat-card-content>
+                <form #newUserForm="ngForm" (ngSubmit)="handleNewUser1(newUserForm)">
+                  <p>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nome Completo</mat-label>
+                        <input name="nome" ngModel #nome="ngModel" matInput required>
+                    </mat-form-field>                  
+                      <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input name="email" ngModel #email="ngModel" type="email" matInput required>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Senha</mat-label>
+                        <input name="senha" ngModel #password="ngModel" required type="password" matInput>
+                      </mat-form-field>
+                      <mat-form-field appearance="outline">
+                        <mat-label>Perfil</mat-label>
+                        <mat-select name="perfil" ngModel #perfil="ngModel" required matInput>
+                          <mat-option value="A">Administrador</mat-option>
+                          <mat-option value="U">Usuário</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </p>
+                  </form>                  
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button [disabled]="!newUserForm.valid" type="submit" mat-raised-button color="primary">Salvar</button>
+              <button mat-button href="#" mat-raised-button color="warn">Cancelar</button>
+            </mat-card-actions>
+          
+          </mat-card>
+    </div>
+</div>

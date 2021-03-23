@@ -2,7 +2,7 @@
     display: flex;
     min-height: 100vh;
 
-    .new-case {
+    .new-anamnese {
         width: 100%;
         padding: 32px 16px 16px 32px;
 
@@ -10,8 +10,13 @@
             font-size: 42px;
             font-weight: 500;
             color: #3F51B5;
+            display: flex;
+            justify-content: center;
         }
-
+        mat-tab-group {
+            display: flex;
+            align-items: center;
+        }
         mat-card {
             margin-top: 28px;
             
@@ -28,8 +33,9 @@
                             flex-direction: row;
                         }
                         
-                        mat-form-field {
-                            width: 100%;
+                        mat-form-field,  mat-radio-group, label, mat-slide-toggle  {
+                            width: 43%;
+                            margin: 15px;
                         }
 
                         mat-list {
@@ -63,6 +69,16 @@
                     }
                 }
             }
+        }
+ 
+        .radio-group {
+            display: flex;
+            flex-direction: column;
+            margin: 15px 0;
+        }
+
+        .radio-button {
+            margin: 5px;
         }
     }
 }
